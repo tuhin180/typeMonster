@@ -9,11 +9,15 @@
       * {
         box-sizing: border-box;
       }
+
       body {
         font-family: "Montserrat", sans-serif;
         line-height: 1.6;
         margin: 0;
         min-height: 100vh;
+      }
+      main {
+        /* text-align: center; */
       }
       ul {
         margin: 0;
@@ -63,6 +67,17 @@
         background-color: #0b0a0a;
       }
 
+      /* main style  */
+
+      table,
+      th,
+      td {
+        border: 1px solid;
+        text-align: center;
+      }
+      .question {
+        padding: 2rem 4rem 2rem 4rem;
+      }
       /* ================================= 
   Media Queries
 ==================================== */
@@ -96,7 +111,119 @@
     </header>
 
     <main>
-      <section></section>
+      <section>
+        <article class="q1">
+          <div class="question">
+            <h1>Difference Between Local Storage and Season Storage</h1>
+            <table>
+              <tr>
+                <th>Local Storage</th>
+                <th>season Storage</th>
+              </tr>
+              <tr>
+                <td>
+                  LocalStorage persists the storage across browser sessions. So
+                  even if the domain is opened in a new tab, or the browser is
+                  closed and reopened, the storage is saved. There is no
+                  expiration
+                </td>
+                <td>
+                  SeasonStorage is cleared when the page session ends. A page
+                  session lasts as long as the tab or the browser is open.
+                  Therefore, when you open a new tab or a new window, this
+                  creates a new session and new storage.
+                </td>
+              </tr>
+            </table>
+          </div>
+        </article>
+        <article class="q2">
+          <div class="question">
+            <h1>Difference Between Global scope and Block scope</h1>
+            <table>
+              <tr>
+                <th>Global Scope</th>
+                <th>Block Scope</th>
+              </tr>
+              <tr>
+                <td>
+                  The variables defined outside of any function or curly
+                  brackets are known as global variables and have global scope.
+                  Global scope means that the variables can be accessed from any
+                  part of that program, any function or conditional state can
+                  access that variable.
+                </td>
+                <td>
+                  The block scope can be defined as the scope of the variables
+                  inside the curly brackets {}. Now, these curly brackets can be
+                  of loops, or conditional statements, or something else. You
+                  are only allowed to refer to these variables from within the
+                  curly brackets {}.
+                </td>
+              </tr>
+            </table>
+          </div>
+        </article>
+        <article class="q3">
+          <div class="question">
+            <h1>what is JavaScript EventLoop?</h1>
+            <p>
+              The event loop is the secret behind JavaScript’s asynchronous
+              programming. JS executes all operations on a single thread, but
+              using a few smart data structures, it gives us the illusion of
+              multi-threading. Let’s take a look at what happens on the
+              back-end..
+            </p>
+
+            <p><strong>there are many steps to compile a program?</strong></p>
+            <p>
+              <strong>call stack: </strong> The call stack is responsible for
+              keeping track of all the operations in line to be executed.
+              Whenever a function is finished, it is popped from the stack.
+            </p>
+            <p>
+              <strong>event queue: </strong>The event queue is responsible for
+              sending new functions to the stack for processing. It follows the
+              queue data structure to maintain the correct sequence in which all
+              operations should be sent for execution.
+            </p>
+            <p>
+              Whenever an async function is called, it is sent to a browser API.
+              These are APIs built into the browser. Based on the command
+              received from the call stack, the API starts its own
+              single-threaded operation. An example of this is the setTimeout
+              method. When a setTimeout operation is processed in the stack, it
+              is sent to the corresponding API which waits till the specified
+              time to send this operation back in for processing. Where does it
+              send the operation? The event queue. Hence, we have a cyclic
+              system for running async operations in JavaScript. The language
+              itself is single-threaded, but the browser APIs act as separate
+              threads. The event loop facilitates this process; it constantly
+              checks whether or not the call stack is empty. If it is empty, new
+              functions are added from the event queue. If it is not, then the
+              current function call is processed.
+            </p>
+          </div>
+        </article>
+        <article class="q4">
+          <div class="question">
+            <h1>How many way we get undefined?</h1>
+
+            <ol>
+              <li>Variable that is not initialized will be undefined.</li>
+              <li>Function that has no return can get undefined</li>
+              <li>Parameter that will not pass can get undefined</li>
+              <li>
+                If retunr has nothing on the right side will return undefined
+              </li>
+              <li>
+                Property that dosent exist on an object will give undefined
+              </li>
+              <li>Accessing array element otsite of the index range</li>
+            </ol>
+          </div>
+        </article>
+      </section>
     </main>
   </body>
 </html>
